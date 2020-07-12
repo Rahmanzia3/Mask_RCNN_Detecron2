@@ -226,14 +226,14 @@ if __name__ == "__main__":
 
     """To verify the data loading is correct, let's visualize the annotations of randomly selected samples in the training set:"""
 
-    dataset_dicts = get_balloon_dicts(train_directory)
-    for d in random.sample(dataset_dicts, 3):
-        img = cv2.imread(d["file_name"])
-        visualizer = Visualizer(img[:, :, ::-1], metadata=balloon_metadata, scale=0.5)
-        out = visualizer.draw_dataset_dict(d)
-        cv2.imshow("Verify_data",out.get_image()[:, :, ::-1])
-        cv2.waitKey(1000)
-        cv2.destroyAllWindows()
+#     dataset_dicts = get_balloon_dicts(train_directory)
+#     for d in random.sample(dataset_dicts, 3):
+#         img = cv2.imread(d["file_name"])
+#         visualizer = Visualizer(img[:, :, ::-1], metadata=balloon_metadata, scale=0.5)
+#         out = visualizer.draw_dataset_dict(d)
+#         cv2.imshow("Verify_data",out.get_image()[:, :, ::-1])
+#         cv2.waitKey(1000)
+#         cv2.destroyAllWindows()
     """## Train!
 
     Now, let's fine-tune a COCO-pretrained R50-FPN Mask R-CNN model on the balloon dataset. It takes ~6 minutes to train 300 iterations on Colab's K80 GPU, or ~2 minutes on a P100 GPU.
